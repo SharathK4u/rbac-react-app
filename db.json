@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "firstName": "Moe",
+      "lastName": "K",
+      "age": "10",
+      "id": "4"
+    },
+    {
+      "firstName": "Doe",
+      "lastName": "J",
+      "age": "96",
+      "id": "5"
+    },
+    {
+      "id": "0af3",
+      "firstName": "Sharath",
+      "lastName": "K",
+      "age": "28"
+    }
+  ],
+  "roles": [
+    {
+      "0": {
+        "name": "",
+        "description": "",
+        "privileges": []
+      },
+      "id": "c7df",
+      "privileges": [
+        {
+          "id": "d5b3"
+        }
+      ],
+      "name": "S",
+      "description": "S"
+    }
+  ],
+  "privileges": [
+    {
+      "id": "d5b3",
+      "name": "Create Database",
+      "description": "Database Updated",
+      "action": "Create",
+      "resource": "Database"
+    },
+    {
+      "id": "d5d3",
+      "name": "Create Redis",
+      "description": "Redis Updated",
+      "action": "Create",
+      "resource": "Redis"
+    }
+  ]
+}
