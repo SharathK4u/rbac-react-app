@@ -1,59 +1,87 @@
 {
   "users": [
     {
-      "firstName": "Moe",
-      "lastName": "K",
-      "age": "10",
-      "id": "4"
-    },
-    {
-      "firstName": "Doe",
-      "lastName": "J",
-      "age": "96",
-      "id": "5"
-    },
-    {
-      "id": "0af3",
+      "id": "eaf5",
       "firstName": "Sharath",
-      "lastName": "K",
-      "age": "28"
-    },
-    {
-      "id": "39a7",
-      "firstName": "Skdamoda",
-      "lastName": "D",
-      "age": "22",
+      "lastName": "Damodarans",
+      "age": "37",
       "role": {
-        "id": "c7df"
+        "id": "acbb"
       }
     }
   ],
   "roles": [
     {
-      "id": "c7df",
+      "id": "acbb",
       "privileges": [
         {
-          "id": "d5b3"
+          "id": "2c40",
+          "name": "Create Database",
+          "description": "Helps Create Databases",
+          "action": "Create",
+          "resource": "Database"
+        },
+        {
+          "id": "cdb1",
+          "name": "Create Redis",
+          "description": "Helps Create Redis",
+          "action": "Create",
+          "resource": "Redis"
         }
       ],
-      "name": "S",
-      "description": "S"
+      "name": "Admin",
+      "description": "Some one who has all the access"
+    },
+    {
+      "id": "b605",
+      "privileges": [
+        {
+          "id": "cdb1",
+          "name": "Create Redis",
+          "description": "Helps Create Redis",
+          "action": "Create",
+          "resource": "Redis"
+        }
+      ],
+      "name": "Redis User",
+      "description": "Access to Create Redis"
+    },
+    {
+      "id": "c198",
+      "name": "Database Admin",
+      "description": "Admin who create database",
+      "privileges": [
+        {
+          "id": "2c40",
+          "name": "Create Database",
+          "description": "Helps Create Databases",
+          "action": "Create",
+          "resource": "Database"
+        }
+      ]
     }
   ],
   "privileges": [
     {
-      "id": "d5b3",
+      "id": "2c40",
       "name": "Create Database",
-      "description": "Database Update",
+      "description": "Helps Create Databases",
       "action": "Create",
       "resource": "Database"
     },
     {
-      "id": "d5d3",
+      "id": "cdb1",
       "name": "Create Redis",
-      "description": "Redis Updated",
+      "description": "Helps Create Redis",
       "action": "Create",
       "resource": "Redis"
+    },
+    {
+      "id": "ad2e",
+      "name": "Grant Access",
+      "description": "Admin privileges to Grant Database Access to other users",
+      "action": "Grant",
+      "resource": "Database"
     }
   ]
 }

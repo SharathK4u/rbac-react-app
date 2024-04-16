@@ -4,11 +4,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import Loader from "../Common/Loader";
 import "./Role.css";
 const Role = ({ flow }) => {
-  const [role, setRole] = useState([{
+  const [role, setRole] = useState({
     name: '',
     description: '',
     privileges: [],
-  }]);
+  });
+  const [privileges, setPrivileges] = useState([]);
   const [checkedState, setCheckedState] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,6 +37,8 @@ const Role = ({ flow }) => {
       .get(roleApi)
       .then((item) => {
         setRole(item.data);
+        const privilegeIds = item.data.privileges.map((privilege) => privilege.id);
+        setCheckedState(privilegeIds)
       })
       .catch((err) => {
         console.log(err);
@@ -46,7 +49,7 @@ const Role = ({ flow }) => {
     axios
       .get(privilegeApi)
       .then((item) => {
-        setRole({ ...role, privileges: item.data })
+        setPrivileges(item.data)
       })
       .catch((err) => {
         console.log(err);
@@ -141,7 +144,7 @@ const Role = ({ flow }) => {
             Privileges
           </label>
           <ul className="form-control">
-            {role.privileges && role.privileges.map(({ id, name }, index) => {
+            {privileges && privileges.map(({ id, name }, index) => {
               return (
                 <li key={index} className="form-control">
                   <input
