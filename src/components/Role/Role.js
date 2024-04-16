@@ -19,11 +19,11 @@ const Role = ({ flow }) => {
   const navigate = useNavigate();
   let roleApi = "";
   if (isEditFlow || isViewFlow) {
-    roleApi += `http://localhost:3000/roles/${id}`;
+    roleApi += `http://localhost:8080/api/v1/roles/${id}`;
   } else {
-    roleApi = `http://localhost:3000/roles`;
+    roleApi = `http://localhost:8080/api/v1/roles`;
   }
-  const privilegeApi = "http://localhost:3000/privileges";
+  const privilegeApi = "http://localhost:8080/api/v1/privileges";
 
   useEffect(() => {
     if (isEditFlow || isViewFlow) {
@@ -57,7 +57,7 @@ const Role = ({ flow }) => {
   };
 
   const handleOnChange = (e) => {
-    const value = e.target.value;
+    const value = Number(e.target.value);
     if (e.target.checked) {
       setCheckedState([...checkedState, value]);
     } else {

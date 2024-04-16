@@ -19,11 +19,11 @@ const User = ({ flow }) => {
   const navigate = useNavigate();
   let userApi = "";
   if (isEditFlow || isViewFlow) {
-    userApi += `http://localhost:3000/users/${id}`;
+    userApi += `http://localhost:8080/api/v1/users/${id}`;
   } else {
-    userApi = `http://localhost:3000/users`;
+    userApi = `http://localhost:8080/api/v1/users`;
   }
-  const roleApi = "http://localhost:3000/roles";
+  const roleApi = "http://localhost:8080/api/v1/roles";
 
   useEffect(() => {
     if (isEditFlow || isViewFlow) {
@@ -148,7 +148,7 @@ const User = ({ flow }) => {
           <label htmlFor="role" className="form-label">
             Role
           </label>
-          <select className="form-control"  value={user.role.id} onChange={handleSelectChange}>
+          <select className="form-control"  value={user.role.id} onChange={handleSelectChange}  disabled={isViewFlow}>
             <option value="">Select a role</option>
             {roles && roles.map((role) => (
               <option key={role.id} value={role.id}>

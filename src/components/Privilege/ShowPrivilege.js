@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
 
 const ShowPrivilege = () => {
-  const showPrivilegeApi = "http://localhost:3000/privileges";
+  const showPrivilegeApi = "http://localhost:8080/api/v1/privileges";
   const navigate = useNavigate();
   const [privilege, setPrivilege] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

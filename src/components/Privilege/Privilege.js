@@ -18,9 +18,9 @@ const Privilege = ({ flow }) => {
   const navigate = useNavigate();
   let privilegeApi = "";
   if (isEditFlow || isViewFlow) {
-    privilegeApi += `http://localhost:3000/privileges/${id}`;
+    privilegeApi += `http://localhost:8080/api/v1/privileges/${id}`;
   } else {
-    privilegeApi = `http://localhost:3000/privileges`;
+    privilegeApi = `http://localhost:8080/api/v1/privileges`;
   }
 
 

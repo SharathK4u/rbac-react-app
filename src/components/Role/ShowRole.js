@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
 
 const ShowRole = () => {
-  const showRoleApi = "http://localhost:3000/roles";
+  const showRoleApi = "http://localhost:8080/api/v1/roles";
   const navigate = useNavigate();
   const [role, setRole] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
