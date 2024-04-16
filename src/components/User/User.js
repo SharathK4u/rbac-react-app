@@ -8,7 +8,7 @@ const User = ({ flow }) => {
     firstName: '',
     lastName: '',
     age: '',
-    roles:[],
+    role:{},
   });
   const [roles, setRoles] = useState([]);
   const [error, setError] = useState(null);
@@ -47,7 +47,7 @@ const User = ({ flow }) => {
     axios
       .get(roleApi)
       .then((item) => {
-        setUser({ ...user, roles: item.data })
+        setRoles(item.data)
       })
       .catch((err) => {
         console.log(err);
@@ -59,6 +59,10 @@ const User = ({ flow }) => {
     const { name, value } = e.target;
     console.log(name, value);
     setUser({ ...user, [name]: value });
+  };
+
+  const handleSelectChange = (e) => {
+    setUser({ ...user, role: {...user.role,id:e.target.value}});
   };
 
   const handelSubmit = (e) => {
@@ -144,9 +148,9 @@ const User = ({ flow }) => {
           <label htmlFor="role" className="form-label">
             Role
           </label>
-          <select className="form-control">
+          <select className="form-control"  value={user.role.id} onChange={handleSelectChange}>
             <option value="">Select a role</option>
-            {user.roles && user.roles.map((role) => (
+            {roles && roles.map((role) => (
               <option key={role.id} value={role.id}>
                 {role.name}
               </option>

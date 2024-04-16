@@ -17,15 +17,19 @@
       "firstName": "Sharath",
       "lastName": "K",
       "age": "28"
+    },
+    {
+      "id": "39a7",
+      "firstName": "Skdamoda",
+      "lastName": "D",
+      "age": "22",
+      "role": {
+        "id": "c7df"
+      }
     }
   ],
   "roles": [
     {
-      "0": {
-        "name": "",
-        "description": "",
-        "privileges": []
-      },
       "id": "c7df",
       "privileges": [
         {
