@@ -26,6 +26,14 @@
     background-color: #000;
     border: 0px !important;
 }
+.create-btn{
+    border-radius: 0px;
+    float: right;
+    width: 200px;
+    margin-top: 15px;
+    background-color: #000;
+    border: 0px !important;
+}
 .heading{
     padding: 0px 0px 15px 0px;
     text-align: center;

@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
 
 const ShowPrivilege = () => {
   const showPrivilegeApi = "http://localhost:3000/privileges";
-
+  const navigate = useNavigate();
   const [privilege, setPrivilege] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const handleCreate = (e) => {
+    e.preventDefault();
+    navigate("/create-privilege");
+  }
 
   const handelDelete = async (id) => {
     console.log("id : -", id);
@@ -50,6 +56,7 @@ const ShowPrivilege = () => {
       <div className="mt-5">
         {isLoading && <Loader />}
         {error && <p>Error: {error}</p>}
+        <button type="submit" className="btn btn-primary create-btn" onClick={handleCreate}>Create</button>
         <table className="table table-striped">
           <thead>
             <tr>

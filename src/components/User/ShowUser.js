@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
 
 const ShowUser = () => {
   const showUserApi = "http://localhost:3000/users";
-
+  const navigate = useNavigate();
   const [user, setUser] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const handleCreate = (e) => {
+    e.preventDefault();
+    navigate("/create-user");
+  }
 
   const handelDelete = async (id) => {
     console.log("id : -", id);
@@ -49,6 +55,8 @@ const ShowUser = () => {
     return (
       <div className="mt-5">
         {isLoading && <Loader />}
+        <button type="submit" className="btn btn-primary create-btn" onClick={handleCreate}>Create
+        </button>
         {error && <p>Error: {error}</p>}
         <table className="table table-striped">
           <thead>

@@ -44,7 +44,7 @@
     {
       "id": "d5b3",
       "name": "Create Database",
-      "description": "Database Updated",
+      "description": "Database Update",
       "action": "Create",
       "resource": "Database"
     },

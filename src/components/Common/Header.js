@@ -24,34 +24,19 @@ export default function Header() {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="create-user">
-                  Create User
-                </Link>
-              </li>
-              <li className="nav-item">
+             <li className="nav-item">
                 <Link className="nav-link" to="show-user">
-                  Show User
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="create-role">
-                  Create Role
+                  Users
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="show-role">
-                  Show Role
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="create-privilege">
-                  Create Privilege
+                  Roles
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="show-privilege">
-                  Show Privilege
+                  Privileges
                 </Link>
               </li>
             </ul>
